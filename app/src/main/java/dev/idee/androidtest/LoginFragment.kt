@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import dev.idee.androidtest.utils.validateEditText
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment() {
@@ -25,9 +26,12 @@ class LoginFragment : Fragment() {
 
     private fun setupClickListeners() {
 
-        loginButton.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToTimeCardListFragment())
-        }
+            loginButton.setOnClickListener {
+                if (validateEditText(loginEmailAddress) && validateEditText(loginPassword)) {
+                    findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToTimeCardListFragment())
+                }
+            }
+
 
     }
 
