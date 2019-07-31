@@ -4,6 +4,7 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
+import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
 
 class TimeCardListViewModelTest {
@@ -23,6 +24,5 @@ class TimeCardListViewModelTest {
     fun listsStartAtZero() {
         Assert.assertEquals(viewModel.timeCardList.size, 0)
     }
-
 
 }
