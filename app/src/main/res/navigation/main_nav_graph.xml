@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_nav_graph"
+        app:startDestination="@id/loginFragment">
+
+
+    <fragment
+            android:id="@+id/loginFragment"
+            android:name="dev.idee.androidtest.LoginFragment"
+            tools:layout="@layout/fragment_login">
+
+        <action
+                android:id="@+id/action_loginFragment_to_timeCardListFragment"
+                app:destination="@id/timeCardListFragment"/>
+
+    </fragment>
+
+
+    <fragment
+            android:id="@+id/timeCardListFragment"
+            android:name="dev.idee.androidtest.TimeCardListFragment"
+            tools:layout="@layout/fragment_timecard_list">
+
+        <action
+                android:id="@+id/action_timeCardListFragment_to_homeFragment"
+                app:destination="@id/createTimeCardFragment"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/createTimeCardFragment"
+            android:name="dev.idee.androidtest.CreateTimeCardFragment"
+            tools:layout="@layout/fragment_create_time_card">
+
+        <action
+                android:id="@+id/action_createTimeCardFragment_to_timeCardListFragment"
+                app:destination="@id/timeCardListFragment"
+                app:popUpTo="@+id/timeCardListFragment"/>
+        <argument
+                android:name="timetableItem"
+                app:argType="dev.idee.androidtest.TimeCardModel" />
+        <argument
+                android:name="isEdit"
+                app:argType="boolean" />
+
+    </fragment>
+
+
+</navigation>
