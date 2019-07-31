@@ -38,6 +38,7 @@ class CreateTimeCardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         fetchArguments()
         setupViewModel()
+        prefillData()
         setupListeners()
     }
 
@@ -83,8 +84,7 @@ class CreateTimeCardFragment : Fragment() {
 
     }
 
-    private fun setupListeners() {
-
+    private fun prefillData() {
         if (isEdit && (timeCardModel != null)) {
             projectNameInputField.setText(timeCardModel?.projectName)
 
@@ -99,6 +99,9 @@ class CreateTimeCardFragment : Fragment() {
         } else {
             deleteBtn.visibility = View.GONE
         }
+    }
+
+    private fun setupListeners() {
 
         dateTextView.setOnClickListener {
             val datePickerFragment = DatePickerFragment()
