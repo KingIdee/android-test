@@ -1,6 +1,6 @@
 # Android test
 
-## Prerequesite
+## Prerequisite
 It is expected you have Android Studio 3.4+ installed on your machine.
 
 ## Getting Started
